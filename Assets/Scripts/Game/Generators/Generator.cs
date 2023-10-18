@@ -12,32 +12,25 @@ public class Generator : MonoBehaviour
     /// Asset contenant toutes les données de game design
     /// du générateur.
     /// </summary>
-    [SerializeField]
-    private GeneratorAsset _asset;
-
-    /// <summary>
-    /// Asset contenant toutes les données de game design
-    /// du générateur.
-    /// </summary>
-    public GeneratorAsset Asset => _asset;
+    public GeneratorAsset Asset;
 
     /// <summary>
     /// Niveau actuel du générateur.
     /// 0 équivaut à la désactivation du générateur.
     /// </summary>
-    private int _currentLevel;
+    public int CurrentLevel { get; private set; }
 
     /// <summary>
     /// Coût (en chaises) pour passer le générateur
     /// au niveau supérieur.
     /// </summary>
-    public double NextLevelCost => _asset.StartPrice * ((_currentLevel * 3) + 1);
+    public double NextLevelCost => Asset.StartPrice * ((CurrentLevel * 3) + 1);
 
     /// <summary>
     /// Nombre de chaises générées à chaque cycle
     /// par ce générateur.
     /// </summary>
-    public double ChairsGeneratedPerCycle => _asset.ChairsEarnedFirstLevel * (_currentLevel * _asset.ChairsEarnedLevelMultiplier);
+    public double ChairsGeneratedPerCycle => Asset.ChairsEarnedFirstLevel * (CurrentLevel * Asset.ChairsEarnedLevelMultiplier);
 
     /// <summary>
     /// Coroutine de génération de chaises.
@@ -64,11 +57,11 @@ public class Generator : MonoBehaviour
 
         ChairCounter.Instance.SpendChairs(NextLevelCost);
 
-        _currentLevel++;
+        CurrentLevel++;
 
         OnLevelBought?.Invoke();
 
-        if (_currentLevel == 1)
+        if (CurrentLevel == 1)
         {
             _generationCoroutine = StartCoroutine(GenerateChairs());
         }
@@ -88,7 +81,7 @@ public class Generator : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(_asset.Delay);
+            yield return new WaitForSeconds(Asset.Delay);
 
             ChairCounter.Instance.EarnChairs(ChairsGeneratedPerCycle);
         }

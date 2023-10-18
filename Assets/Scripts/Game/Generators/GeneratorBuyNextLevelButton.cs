@@ -11,45 +11,41 @@ public class GeneratorBuyNextLevelButton : MonoBehaviour
     /// <summary>
     /// Générateur lié à ce bouton.
     /// </summary>
-    [SerializeField]
-    private Generator _generator;
+    public Generator generator;
 
     /// <summary>
     /// Bouton d'UI dont on doit détecter le clic.
     /// </summary>
-    [SerializeField]
-    private Button _buyButton;
+    public Button buyButton;
 
     /// <summary>
     /// Champ texte affichant le nom du générateur.
     /// </summary>
-    [SerializeField]
-    private TMP_Text _generatorName;
+    public TMP_Text generatorName;
 
     /// <summary>
     /// Champ texte affichant le coût d'achat du prochain
     /// niveau du générateur.
     /// </summary>
-    [SerializeField]
-    private TMP_Text _nextLevelCost;
+    public TMP_Text nextLevelCost;
 
     private void Start()
     {
-        _generatorName.text = _generator.Asset.DisplayName;
-        _nextLevelCost.text = _generator.NextLevelCost.ToString();
-        _buyButton.interactable = ChairCounter.Instance.CanSpendChairs(_generator.NextLevelCost);
+        generatorName.text = generator.Asset.DisplayName;
+        nextLevelCost.text = generator.NextLevelCost.ToString();
+        buyButton.interactable = ChairCounter.Instance.CanSpendChairs(generator.NextLevelCost);
     }
 
     private void OnEnable()
     {
         ChairCounter.Instance.CountChanged += OnChairCountChanged;
-        _buyButton.onClick.AddListener(OnButtonClick);
+        buyButton.onClick.AddListener(OnButtonClick);
     }
 
     private void OnDisable()
     {
         ChairCounter.Instance.CountChanged -= OnChairCountChanged;
-        _buyButton.onClick.RemoveListener(OnButtonClick);
+        buyButton.onClick.RemoveListener(OnButtonClick);
     }
 
     /// <summary>
@@ -58,7 +54,7 @@ public class GeneratorBuyNextLevelButton : MonoBehaviour
     /// </summary>
     void OnChairCountChanged(double newAmount)
     {
-        _buyButton.interactable = newAmount >= _generator.NextLevelCost;
+        buyButton.interactable = newAmount >= generator.NextLevelCost;
     }
 
     /// <summary>
@@ -66,12 +62,12 @@ public class GeneratorBuyNextLevelButton : MonoBehaviour
     /// </summary>
     void OnButtonClick()
     {
-        if (!ChairCounter.Instance.CanSpendChairs(_generator.NextLevelCost))
+        if (!ChairCounter.Instance.CanSpendChairs(generator.NextLevelCost))
         {
             return;
         }
 
-        _generator.BuyNextLevel();
-        _nextLevelCost.text = _generator.NextLevelCost.ToString();
+        generator.BuyNextLevel();
+        nextLevelCost.text = generator.NextLevelCost.ToString();
     }
 }
