@@ -1,8 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
-using UnityEngine.VFX;
 
 /// <summary>
 /// Composant permettant de gagner des chaises 
