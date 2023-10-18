@@ -38,9 +38,13 @@ public class ChairCounter
 
     /// <summary>
     /// Ajoute un nombre de chaises données au compteur.
+    /// Si le nombre à été changé, invoque l'évènement
+    /// <see cref="CountChanged"/>.
     /// </summary>
     /// <param name="amount">
     /// Nombre de chaises à obtenir.
+    /// <br/>
+    /// Doit être supérieur à 0.
     /// </param>
     public void EarnChairs(double amount)
     {
@@ -63,10 +67,14 @@ public class ChairCounter
         => Count >= amount;
 
     /// <summary>
-    /// Retire un nombre de chaises données au compteur.
+    /// Si le.a joueur.euse possède assez de chaises, 
+    /// retire un nombre de chaises données au compteur.
+    /// Si le nombre à été changé, invoque l'évènement
+    /// <see cref="CountChanged"/>.
     /// </summary>
     /// <param name="amount">
     /// Nombre de chaises à dépenser.
+    /// Doit être supérieur à 0.
     /// </param>
     public void SpendChairs(double amount)
     {
