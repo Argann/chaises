@@ -23,8 +23,11 @@ public class GainChairsOnClick : MonoBehaviour, IPointerDownHandler
     /// <summary>
     /// Méthode appelée automatiquement par Unity lorsque
     /// l'on clique sur un composant associé à ce script.
+    /// <br/>
+    /// Fait gagner un montant fixe de chaises, et invoque
+    /// l'évènement <see cref="OnClick"/>.
     /// </summary>
-    void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData _)
     {
         ChairCounter.Instance.EarnChairs(_amountToGain);
 
