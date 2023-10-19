@@ -308,10 +308,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c864f9478d8f973479cb7608a4b3df2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _generator: {fileID: 192259684}
-  _buyButton: {fileID: 1949651159}
-  _generatorName: {fileID: 1646811507}
-  _nextLevelCost: {fileID: 53755392}
+  generator: {fileID: 192259684}
+  buyButton: {fileID: 1949651159}
+  generatorName: {fileID: 1646811507}
+  nextLevelCost: {fileID: 53755392}
 --- !u!114 &192259684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b9b5f2a7626eb4f85fb6018125d0c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _asset: {fileID: 11400000, guid: f856f2124266f59478acf9fcb2129bf0, type: 2}
+  Asset: {fileID: 11400000, guid: f856f2124266f59478acf9fcb2129bf0, type: 2}
 --- !u!1 &213630224
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,10 +510,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c864f9478d8f973479cb7608a4b3df2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _generator: {fileID: 252499733}
-  _buyButton: {fileID: 916990936}
-  _generatorName: {fileID: 1710124224}
-  _nextLevelCost: {fileID: 2119065412}
+  generator: {fileID: 252499733}
+  buyButton: {fileID: 916990936}
+  generatorName: {fileID: 1710124224}
+  nextLevelCost: {fileID: 2119065412}
 --- !u!114 &252499733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b9b5f2a7626eb4f85fb6018125d0c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _asset: {fileID: 11400000, guid: 1c8987361583d9049b870fe94384441d, type: 2}
+  Asset: {fileID: 11400000, guid: 1c8987361583d9049b870fe94384441d, type: 2}
 --- !u!1 &273499872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,10 +1069,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c864f9478d8f973479cb7608a4b3df2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _generator: {fileID: 1000202934}
-  _buyButton: {fileID: 273499874}
-  _generatorName: {fileID: 1575299510}
-  _nextLevelCost: {fileID: 1253547939}
+  generator: {fileID: 1000202934}
+  buyButton: {fileID: 273499874}
+  generatorName: {fileID: 1575299510}
+  nextLevelCost: {fileID: 1253547939}
 --- !u!114 &1000202934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1085,7 +1085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b9b5f2a7626eb4f85fb6018125d0c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _asset: {fileID: 11400000, guid: e8e6d0dd55dd23f4fa61dfc0b433ff30, type: 2}
+  Asset: {fileID: 11400000, guid: e8e6d0dd55dd23f4fa61dfc0b433ff30, type: 2}
 --- !u!1 &1133784153
 GameObject:
   m_ObjectHideFlags: 0
